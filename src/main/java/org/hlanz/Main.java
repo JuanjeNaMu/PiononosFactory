@@ -4,22 +4,20 @@ import org.hlanz.servlets.PastelService;
 
 import java.util.Scanner;
 
+// Esta clase NO usa servidor web, es solo para probar la lógica
+// Es como usar Postman pero desde la consola de Java
 public class Main {
     void main(){
-        //Hacemos un objeto service como en acceso a datos
+        // Creamos el servicio (como si estuvieramos en un servidor real)
         PastelService service = new PastelService();
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);  // Para leer lo que escriba el usuario
 
         System.out.println("||||||||||||API REST DE PASTELES - PRUEBA SIN SERVIDOR ||||||||||||\n");
 
-        /*
-        Vamos a simular las peticiones HTTP que le hariamos a un servidor web
+        //Vamos a simular las peticiones HTTP que le haríamos a un servidor web//
 
-        Lo siguiente seria hacer esto con servlets
-        (clase de Java que se ejecuta en un servidor web)
-         */
         while (true) {
-            int opcion = Integer.parseInt(scanner.nextLine());
+            int opcion = Integer.parseInt(scanner.nextLine());  // Lee opción del usuario
             System.out.println();
 
             switch (opcion) {
@@ -98,7 +96,12 @@ public class Main {
         }//fin while
     }// fin Main
 
-    // Método auxiliar para formatear JSON (indentación simple)
+    // Método auxiliar para formatear JSON bonito (con sangrías)
+    // Toma un JSON feo como {"id":1,"nombre":"Tres Leches"} y lo hace bonito:
+    // {
+    //   "id": 1,
+    //   "nombre": "Tres Leches"
+    // }
     private String formatJson(String json) {
         StringBuilder formatted = new StringBuilder();
         int indentLevel = 0;
@@ -107,30 +110,35 @@ public class Main {
         for (int i = 0; i < json.length(); i++) {
             char c = json.charAt(i);
 
+            // Detecta si estamos dentro de comillas (texto)
             if (c == '"' && (i == 0 || json.charAt(i - 1) != '\\')) {
                 inString = !inString;
             }
 
             if (!inString) {
                 if (c == '{' || c == '[') {
+                    // Añade sangría cuando empieza objeto o array
                     formatted.append(c).append('\n');
                     indentLevel++;
                     formatted.append("  ".repeat(indentLevel));
                 } else if (c == '}' || c == ']') {
+                    // Quita sangría cuando termina
                     formatted.append('\n');
                     indentLevel--;
                     formatted.append("  ".repeat(indentLevel));
                     formatted.append(c);
                 } else if (c == ',') {
+                    // Nueva línea después de coma
                     formatted.append(c).append('\n');
                     formatted.append("  ".repeat(indentLevel));
                 } else if (c == ':') {
+                    // Espacio después de dos puntos
                     formatted.append(c).append(' ');
                 } else if (c != ' ') {
                     formatted.append(c);
                 }
             } else {
-                formatted.append(c);
+                formatted.append(c);  // Dentro de comillas, copia tal cual
             }
         }
         return formatted.toString();
