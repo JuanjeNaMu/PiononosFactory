@@ -3,8 +3,8 @@ package org.hlanz.servlets;
 import org.hlanz.entity.Pastel;
 import org.hlanz.mensaje.JsonUtil;
 import org.hlanz.repository.PastelRepository;
-
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,56 +12,45 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
-// Esta clase ES el servidor web
-// Extiende un HttpServlet, un programa que responde a peticiones HTTP
+// API REST para pasteles en /api/pasteles
+@WebServlet("/api/pasteles/*")
 public class PastelServlet extends HttpServlet {
     private PastelRepository repository = PastelRepository.getInstance();
 
-    // MNÉTODO 1: GET - Obtener todos o uno por ID
-    // Se ejecuta cuando alguien hace: GET http://tu-servidor/api/pasteles
+    // MÉTODO 1: GET /api/pasteles → lista todos o GET /api/pasteles/5 → obtiene pastel con ID 5
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // La respuesta será JSON
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
 
-        // Miramos qué URL pidieron
-        String pathInfo = req.getPathInfo();
+        String pathInfo = req.getPathInfo(); // Obtiene /5 de /api/pasteles/5
 
         try {
-            // Si piden /api/pasteles (sin ID)
-            if (pathInfo == null || pathInfo.equals("/")) {
-                // GET /api/pasteles - Obtener todos
-                List<Pastel> pasteles = repository.obtenerTodos();
-                String json = JsonUtil.pastelesListToJson(pasteles);
-                resp.setStatus(HttpServletResponse.SC_OK);  // Código 200 = OK
-                resp.getWriter().write(json);  // Envía el JSON
-
-            } else {
-                // GET /api/pasteles/{id} - Obtener uno por ID
-                Long id = Long.parseLong(pathInfo.substring(1));
+            // Si hay ID en la URL (/api/pasteles/5)
+            if (pathInfo != null && !pathInfo.equals("/")) {
+                Long id = Long.parseLong(pathInfo.substring(1)); // Quita / inicial
                 Pastel pastel = repository.obtenerPorId(id);
 
                 if (pastel != null) {
-                    String json = JsonUtil.pastelToJson(pastel);
-                    resp.setStatus(HttpServletResponse.SC_OK);  // 200 = OK
-                    resp.getWriter().write(json);
+                    resp.getWriter().write(JsonUtil.pastelToJson(pastel));
                 } else {
-                    resp.setStatus(HttpServletResponse.SC_NOT_FOUND);  // 404 = No encontrado
+                    resp.setStatus(404);
                     resp.getWriter().write("{\"error\":\"Pastel no encontrado\"}");
                 }
+            } else {
+                // Sin ID, devuelve todos
+                List<Pastel> pasteles = repository.obtenerTodos();
+                resp.getWriter().write(JsonUtil.pastelesListToJson(pasteles));
             }
         } catch (NumberFormatException e) {
-            // Si el ID no es un número da error 400
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            resp.setStatus(400);
             resp.getWriter().write("{\"error\":\"ID inválido\"}");
         }
     }
 
-    // MÉTODO 2: POST - Crear nuevo pastel
-    // Se ejecuta cuando alguien hace: POST http://tu-servidor/api/pasteles
+    //MÉTODO 2:  POST /api/pasteles → crea pastel nuevo
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -70,107 +59,89 @@ public class PastelServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 
         try {
-            // Leer el cuerpo de la petición, QUE ES UN JSON
-            String json = leerBody(req);
-
-            // Convertir JSON a objeto Pastel
+            String json = leerBody(req); // Lee JSON del body
             Pastel nuevoPastel = JsonUtil.jsonToPastel(json);
-
-            // Guardar en el repositorio
             Pastel pastelCreado = repository.crear(nuevoPastel);
 
-            // Responder con el pastel creado
-            resp.setStatus(HttpServletResponse.SC_CREATED);  // Si todo va bien, 201 = Creado
+            resp.setStatus(201); // Created
             resp.getWriter().write(JsonUtil.pastelToJson(pastelCreado));
-
         } catch (Exception e) {
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);  // 400 = Error en datos
+            resp.setStatus(400);
             resp.getWriter().write("{\"error\":\"Datos inválidos\"}");
         }
     }
 
-    // MÉTODO 3: PUT - Actualizar pastel existente
-    // Se ejecuta cuando alguien hace: PUT http://tu-servidor/api/pasteles/1
+    // MÉTODO 3: PUT /api/pasteles/5 → actualiza pastel con ID 5
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
-
         String pathInfo = req.getPathInfo();
 
-        // Verificar que nos dieron un ID
         if (pathInfo == null || pathInfo.equals("/")) {
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);  // 400 = Falta ID
+            resp.setStatus(400);
             resp.getWriter().write("{\"error\":\"ID requerido\"}");
             return;
         }
 
         try {
-            Long id = Long.parseLong(pathInfo.substring(1));  // Extrae ID de la URL
-            String json = leerBody(req);  // Lee el JSON del body
-            Pastel pastel = JsonUtil.jsonToPastel(json);  // Convierte
-
-            Pastel actualizado = repository.actualizar(id, pastel);  // Actualiza
+            Long id = Long.parseLong(pathInfo.substring(1));
+            String json = leerBody(req);
+            Pastel pastel = JsonUtil.jsonToPastel(json);
+            Pastel actualizado = repository.actualizar(id, pastel);
 
             if (actualizado != null) {
-                resp.setStatus(HttpServletResponse.SC_OK);  // 200 = OK
                 resp.getWriter().write(JsonUtil.pastelToJson(actualizado));
             } else {
-                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);  // 404 = No existe
+                resp.setStatus(404);
                 resp.getWriter().write("{\"error\":\"Pastel no encontrado\"}");
             }
-
         } catch (Exception e) {
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);  // 400 = Error
+            resp.setStatus(400);
             resp.getWriter().write("{\"error\":\"Datos inválidos\"}");
         }
     }
 
-    // MÉTODO 4: DELETE - Eliminar pastel
-    // Se ejecuta cuando alguien hace: DELETE http://tu-servidor/api/pasteles/3
+    // MÉTODO 4: DELETE /api/pasteles/5 → elimina pastel con ID 5
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
-
         String pathInfo = req.getPathInfo();
 
         if (pathInfo == null || pathInfo.equals("/")) {
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);  // 400 = Falta ID
+            resp.setStatus(400);
             resp.getWriter().write("{\"error\":\"ID requerido\"}");
             return;
         }
 
         try {
-            Long id = Long.parseLong(pathInfo.substring(1));  // Extrae ID
-            boolean eliminado = repository.eliminar(id);  // Elimina
+            Long id = Long.parseLong(pathInfo.substring(1));
 
-            if (eliminado) {
-                resp.setStatus(HttpServletResponse.SC_NO_CONTENT);  // 204 = Eliminado (sin contenido)
+            if (repository.eliminar(id)) {
+                resp.setStatus(204); // No Content (éxito sin cuerpo)
             } else {
-                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);  // 404 = No existe
+                resp.setStatus(404);
                 resp.getWriter().write("{\"error\":\"Pastel no encontrado\"}");
             }
-
         } catch (NumberFormatException e) {
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);  // 400 = ID inválido
+            resp.setStatus(400);
             resp.getWriter().write("{\"error\":\"ID inválido\"}");
         }
     }
 
-    // MÉTODO 5: Método auxiliar para leer el body de la petición
-    // (El JSON que nos envían en POST/PUT)
+    // Lee el cuerpo de la petición HTTP (el JSON que envía el cliente)
     private String leerBody(HttpServletRequest req) throws IOException {
         StringBuilder buffer = new StringBuilder();
         BufferedReader reader = req.getReader();
         String line;
         while ((line = reader.readLine()) != null) {
-            buffer.append(line);  // Lee línea por línea
+            buffer.append(line);
         }
-        return buffer.toString();  // Devuelve todo como un solo string
+        return buffer.toString();
     }
 }

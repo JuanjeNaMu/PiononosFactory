@@ -1,14 +1,12 @@
 package org.hlanz.mensaje;
 
 import org.hlanz.entity.Pastel;
-
 import java.util.List;
 
-
-// Convierte objetos Pastel a texto JSON y viceversa
+// Convierte objetos Pastel a JSON y al revés
 public class JsonUtil {
 
-    // MÉTODO 1: Convierte UN pastel a texto JSON
+    // Convierte pastel a JSON
     public static String pastelToJson(Pastel p) {
         return String.format(
                 "{\"id\":%d,\"nombre\":\"%s\",\"sabor\":\"%s\",\"precio\":%.2f,\"porciones\":%d}",
@@ -16,61 +14,40 @@ public class JsonUtil {
         );
     }
 
-    // MÉTODO 2: Convierte una LISTA de pasteles a texto JSON
+    // Convierte lista de pasteles a JSON array
     public static String pastelesListToJson(List<Pastel> pasteles) {
         StringBuilder json = new StringBuilder("[");
         for (int i = 0; i < pasteles.size(); i++) {
-            json.append(pastelToJson(pasteles.get(i)));  // Añade cada pastel
-            if (i < pasteles.size() - 1) {
-                json.append(",");  // Pone coma entre pasteles (pero no al final)
-            }
+            json.append(pastelToJson(pasteles.get(i)));
+            if (i < pasteles.size() - 1) json.append(",");
         }
-        json.append("]");  // Cierra el array
+        json.append("]");
         return json.toString();
     }
 
-    // MÉTODO 3: Convierte texto JSON a un objeto Pastel
+    // Convierte JSON a objeto Pastel
     public static Pastel jsonToPastel(String json) {
-        Pastel pastel = new Pastel();  // Creamos pastel vacío
-
-        // Extraemos cada valor del JSON
-        pastel.setNombre(extraerValor(json, "nombre"));   // Extrae el nombre
-        pastel.setSabor(extraerValor(json, "sabor"));     // Extrae el sabor
-
-        String precioStr = extraerValor(json, "precio");
-        if (precioStr != null) {
-            pastel.setPrecio(Double.parseDouble(precioStr));  // Convierte texto a número
-        }
-
-        String porcionesStr = extraerValor(json, "porciones");
-        if (porcionesStr != null) {
-            pastel.setPorciones(Integer.parseInt(porcionesStr));  // Convierte texto a número
-        }
-
-        return pastel;  // Devuelve el pastel completo
+        Pastel pastel = new Pastel();
+        pastel.setNombre(extraerValor(json, "nombre"));
+        pastel.setSabor(extraerValor(json, "sabor"));
+        pastel.setPrecio(Double.parseDouble(extraerValor(json, "precio")));
+        pastel.setPorciones(Integer.parseInt(extraerValor(json, "porciones")));
+        return pastel;
     }
 
-    // MÉTODO 4: Buscar valores dentro del JSON
+    // Coge un valor del string JSON (busca la clave y devuelve su valor)
     private static String extraerValor(String json, String clave) {
-        String patron = "\"" + clave + "\"";  // Busca "clave"
-        int inicio = json.indexOf(patron);
-        if (inicio == -1) return null;  // Si no encuentra la clave, devuelve null
+        int inicio = json.indexOf("\"" + clave + "\"");
+        inicio = json.indexOf(":", inicio) + 1;
+        json = json.substring(inicio).trim();
 
-        inicio = json.indexOf(":", inicio) + 1;  // Avanza hasta después de los dos puntos
-        int fin;
-
-        json = json.substring(inicio).trim();  // Corta el string desde ahí
-
-        // Si el valor está entre comillas (es texto)
+        // Si es string (empieza con "), extrae hasta la siguiente "
         if (json.startsWith("\"")) {
-            inicio = 1;  // Salta la comilla inicial
-            fin = json.indexOf("\"", inicio);  // Busca la comilla final
-            return json.substring(inicio, fin);  // Extrae el texto
-        } else {
-            // Si el valor NO está entre comillas (es número)
-            fin = json.indexOf(",");
-            if (fin == -1) fin = json.indexOf("}");  // Busca el final
-            return json.substring(0, fin).trim();  // Extrae el número
+            return json.substring(1, json.indexOf("\"", 1));
         }
+        // Si es número, extrae hasta la coma o }
+        int fin = json.indexOf(",");
+        if (fin == -1) fin = json.indexOf("}");
+        return json.substring(0, fin).trim();
     }
 }

@@ -1,67 +1,142 @@
 package org.hlanz.repository;
 
 import org.hlanz.entity.Pastel;
-
+import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
 
-// Esta clase simula una base de datos en memoria. Usa un HashMap que desaparecen al apagar el programa
+// Gestiona la BD de pasteles (patrón Singleton)
 public class PastelRepository {
-    private static PastelRepository instance;  // Única instancia (Singleton)
-    private Map<Long, Pastel> pasteles = new HashMap<>();
-    private AtomicLong idGenerator = new AtomicLong(1);  // Generador automático de IDs
+    private static PastelRepository instance;
+    private Connection conn;
 
-    // Constructor PRIVADO - Parte del patrón Singleton
-    private PastelRepository() {
-        // Creamos 4 pasteles de ejemplo para empezar
-        crear(new Pastel(null, "Tres Leches", "Vainilla", 25.50, 12));
-        crear(new Pastel(null, "Selva Negra", "Chocolate", 30.00, 10));
-        crear(new Pastel(null, "Red Velvet", "Chocolate Rojo", 28.75, 14));
-        crear(new Pastel(null, "Zanahoria", "Especias", 22.00, 8));
+    // Constructor privado (solo se ejecuta 1 vez)
+    private PastelRepository(){
+        try {
+            // Conecta a PostgreSQL
+            Class.forName("org.postgresql.Driver");
+            conn = DriverManager.getConnection(
+                    "jdbc:postgresql://localhost:5432/Pastel",
+                    "postgres",
+                    "adminadmin123"
+            );
+
+            // Crea tabla si no existe
+            String sql = "CREATE TABLE IF NOT EXISTS pastel (" +
+                    "id SERIAL PRIMARY KEY, " +
+                    "nombre VARCHAR(100) NOT NULL, " +
+                    "sabor VARCHAR(100) NOT NULL, " +
+                    "precio DECIMAL(10,2) NOT NULL, " +
+                    "porciones INTEGER NOT NULL)";
+            conn.createStatement().execute(sql);
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    // MÉTODO 1: Obtener la única instancia (Singleton)
-    // Asegura que solo haya UN PastelRepository en todo el programa
+    // Devuelve la única instancia (Singleton)
     public static PastelRepository getInstance() {
-        if (instance == null) {
-            instance = new PastelRepository();  // Se crea solo la primera vez
-        }
+        if (instance == null) instance = new PastelRepository();
         return instance;
     }
 
-    // MÉTODO 2: Devuelve TODOS los pasteles como una lista
-    public List<Pastel> obtenerTodos() {
-        return new ArrayList<>(pasteles.values());  // Convierte el mapa a lista
-    }
+    // MÉTODO 1: INSERT - Guarda pastel nuevo y devuelve con ID generado
+    public Pastel crear(Pastel p){
+        String sql = "INSERT INTO pastel (nombre, sabor, precio, porciones) VALUES (?, ?, ?, ?)";
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, p.getNombre());
+            stmt.setString(2, p.getSabor());
+            stmt.setDouble(3, p.getPrecio());
+            stmt.setInt(4, p.getPorciones());
+            stmt.executeUpdate();
 
-    // MÉTODO 3: Busca un pastel por su ID
-    public Pastel obtenerPorId(Long id) {
-        return pasteles.get(id);  // Devuelve null si no existe
-    }
-
-    // MÉTODO 4: Crea un nuevo pastel (le asigna ID automático)
-    public Pastel crear(Pastel pastel) {
-        Long id = idGenerator.getAndIncrement();
-        pastel.setId(id);  // Asigna el ID nuevo (autoincrement) al pastel
-        pasteles.put(id, pastel);  // Guarda en el mapa
-        return pastel;  // Devuelve el pastel con su ID
-    }
-
-    // MÉTODO 4: Actualiza un pastel existente
-    public Pastel actualizar(Long id, Pastel pastel) {
-        if (pasteles.containsKey(id)) {
-            pastel.setId(id);  // Asegura que tenga el ID correcto
-            pasteles.put(id, pastel);  // Reemplaza el viejo con el nuevo
-            return pastel;  // Devuelve el pastel actualizado
+            // Obtiene el ID generado por la BD
+            ResultSet rs = stmt.getGeneratedKeys();
+            if (rs.next()) p.setId(rs.getLong(1));
+            return p;
+        } catch(SQLException e) {
+            e.printStackTrace();
+            return null;
         }
-        return null;  // Si no existe, devuelve null
     }
 
-    // MÉTODO 5: Elimina un pastel por ID
+    // MÉTODO 2: SELECT * - Devuelve todos los pasteles
+    public List<Pastel> obtenerTodos(){
+        List<Pastel> pasteles = new ArrayList<>();
+        String sql = "SELECT * FROM pastel ORDER BY id";
+        try {
+            ResultSet rs = conn.createStatement().executeQuery(sql);
+            while(rs.next()){
+                Pastel p = new Pastel();
+                p.setId(rs.getLong("id"));
+                p.setNombre(rs.getString("nombre"));
+                p.setSabor(rs.getString("sabor"));
+                p.setPrecio(rs.getDouble("precio"));
+                p.setPorciones(rs.getInt("porciones"));
+                pasteles.add(p);
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return pasteles;
+    }
+
+    // MÉTODO 3: SELECT WHERE id - Busca 1 pastel por ID
+    public Pastel obtenerPorId(Long id) {
+        String sql = "SELECT * FROM pastel WHERE id = ?";
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                Pastel p = new Pastel();
+                p.setId(rs.getLong("id"));
+                p.setNombre(rs.getString("nombre"));
+                p.setSabor(rs.getString("sabor"));
+                p.setPrecio(rs.getDouble("precio"));
+                p.setPorciones(rs.getInt("porciones"));
+                return p;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // MÉTODO 4: UPDATE - Modifica un pastel existente
+    public Pastel actualizar(Long id, Pastel pastel) {
+        String sql = "UPDATE pastel SET nombre=?, sabor=?, precio=?, porciones=? WHERE id=?";
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, pastel.getNombre());
+            stmt.setString(2, pastel.getSabor());
+            stmt.setDouble(3, pastel.getPrecio());
+            stmt.setInt(4, pastel.getPorciones());
+            stmt.setLong(5, id);
+
+            if (stmt.executeUpdate() > 0) {
+                pastel.setId(id);
+                return pastel;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // MÉTODO 5: DELETE - Elimina un pastel
     public boolean eliminar(Long id) {
-        return pasteles.remove(id) != null;  // True si lo eliminó, False si no existía
+        String sql = "DELETE FROM pastel WHERE id = ?";
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setLong(1, id);
+            return stmt.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

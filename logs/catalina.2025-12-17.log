@@ -1,0 +1,200 @@
+17-Dec-2025 13:47:14.403 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.112
+17-Dec-2025 13:47:14.405 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Nov 6 2025 07:46:18 UTC
+17-Dec-2025 13:47:14.405 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.112.0
+17-Dec-2025 13:47:14.405 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+17-Dec-2025 13:47:14.405 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+17-Dec-2025 13:47:14.405 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+17-Dec-2025 13:47:14.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\jjnam\.jdks\openjdk-25
+17-Dec-2025 13:47:14.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       25+36-3489
+17-Dec-2025 13:47:14.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+17-Dec-2025 13:47:14.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\jjnam\Desktop\PiononosFactory
+17-Dec-2025 13:47:14.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\jjnam\Documents\apache-tomcat-9.0.112
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\jjnam\Documents\apache-tomcat-9.0.112
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\jjnam\Desktop\PiononosFactory
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\jjnam\Desktop\PiononosFactory\temp
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\jjnam\Desktop\PiononosFactory\conf\logging.properties
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Dec-2025 13:47:14.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.3\lib\idea_rt.jar=51577
+17-Dec-2025 13:47:14.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+17-Dec-2025 13:47:14.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+17-Dec-2025 13:47:14.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+17-Dec-2025 13:47:14.420 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\jjnam\.jdks\openjdk-25\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Autofirma\Autofirma;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\jjnam\AppData\Local\Microsoft\WindowsApps;C:\Users\jjnam\AppData\Roaming\npm;C:\Users\jjnam\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jjnam\AppData\Local\gitkraken\bin;C:\Users\jjnam\AppData\Local\Android\Sdk\emulator;C:\Users\jjnam\.dotnet\tools;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;;.]
+17-Dec-2025 13:47:14.761 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+17-Dec-2025 13:47:14.778 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [609] milliseconds
+17-Dec-2025 13:47:14.830 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+17-Dec-2025 13:47:14.830 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.112]
+17-Dec-2025 13:47:14.842 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\jjnam\Desktop\PiononosFactory\conf\Catalina\localhost\ROOT.xml]
+17-Dec-2025 13:47:15.380 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+17-Dec-2025 13:47:15.448 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jjnam\Desktop\PiononosFactory\conf\Catalina\localhost\ROOT.xml] has finished in [602] ms
+17-Dec-2025 13:47:15.452 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:47:15.493 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [713] milliseconds
+17-Dec-2025 13:48:46.351 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:48:46.381 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+17-Dec-2025 13:48:46.391 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:48:46.403 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:48:49.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.112
+17-Dec-2025 13:48:49.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Nov 6 2025 07:46:18 UTC
+17-Dec-2025 13:48:49.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.112.0
+17-Dec-2025 13:48:49.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+17-Dec-2025 13:48:49.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+17-Dec-2025 13:48:49.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+17-Dec-2025 13:48:49.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\jjnam\.jdks\openjdk-25
+17-Dec-2025 13:48:49.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       25+36-3489
+17-Dec-2025 13:48:49.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+17-Dec-2025 13:48:49.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\jjnam\Desktop\PiononosFactory
+17-Dec-2025 13:48:49.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\jjnam\Documents\apache-tomcat-9.0.112
+17-Dec-2025 13:48:49.017 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Dec-2025 13:48:49.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+17-Dec-2025 13:48:49.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+17-Dec-2025 13:48:49.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-Dec-2025 13:48:49.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Dec-2025 13:48:49.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\jjnam\Documents\apache-tomcat-9.0.112
+17-Dec-2025 13:48:49.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\jjnam\Desktop\PiononosFactory
+17-Dec-2025 13:48:49.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\jjnam\Desktop\PiononosFactory\temp
+17-Dec-2025 13:48:49.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\jjnam\Desktop\PiononosFactory\conf\logging.properties
+17-Dec-2025 13:48:49.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Dec-2025 13:48:49.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.3\lib\idea_rt.jar=63579
+17-Dec-2025 13:48:49.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+17-Dec-2025 13:48:49.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+17-Dec-2025 13:48:49.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+17-Dec-2025 13:48:49.030 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\jjnam\.jdks\openjdk-25\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Autofirma\Autofirma;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\jjnam\AppData\Local\Microsoft\WindowsApps;C:\Users\jjnam\AppData\Roaming\npm;C:\Users\jjnam\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jjnam\AppData\Local\gitkraken\bin;C:\Users\jjnam\AppData\Local\Android\Sdk\emulator;C:\Users\jjnam\.dotnet\tools;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;;.]
+17-Dec-2025 13:48:49.331 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+17-Dec-2025 13:48:49.348 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [542] milliseconds
+17-Dec-2025 13:48:49.388 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+17-Dec-2025 13:48:49.388 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.112]
+17-Dec-2025 13:48:49.398 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\jjnam\Desktop\PiononosFactory\conf\Catalina\localhost\ROOT.xml]
+17-Dec-2025 13:48:49.884 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+17-Dec-2025 13:48:49.952 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jjnam\Desktop\PiononosFactory\conf\Catalina\localhost\ROOT.xml] has finished in [549] ms
+17-Dec-2025 13:48:49.956 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:48:49.989 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [638] milliseconds
+17-Dec-2025 13:50:40.347 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:50:40.379 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+17-Dec-2025 13:50:40.396 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:50:40.406 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:50:51.384 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.112
+17-Dec-2025 13:50:51.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Nov 6 2025 07:46:18 UTC
+17-Dec-2025 13:50:51.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.112.0
+17-Dec-2025 13:50:51.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+17-Dec-2025 13:50:51.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+17-Dec-2025 13:50:51.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+17-Dec-2025 13:50:51.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\jjnam\.jdks\openjdk-25
+17-Dec-2025 13:50:51.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       25+36-3489
+17-Dec-2025 13:50:51.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+17-Dec-2025 13:50:51.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\jjnam\Desktop\PiononosFactory
+17-Dec-2025 13:50:51.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\jjnam\Documents\apache-tomcat-9.0.112
+17-Dec-2025 13:50:51.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Dec-2025 13:50:51.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+17-Dec-2025 13:50:51.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+17-Dec-2025 13:50:51.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-Dec-2025 13:50:51.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Dec-2025 13:50:51.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\jjnam\Documents\apache-tomcat-9.0.112
+17-Dec-2025 13:50:51.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\jjnam\Desktop\PiononosFactory
+17-Dec-2025 13:50:51.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\jjnam\Desktop\PiononosFactory\temp
+17-Dec-2025 13:50:51.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\jjnam\Desktop\PiononosFactory\conf\logging.properties
+17-Dec-2025 13:50:51.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Dec-2025 13:50:51.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.3\lib\idea_rt.jar=63899
+17-Dec-2025 13:50:51.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+17-Dec-2025 13:50:51.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+17-Dec-2025 13:50:51.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+17-Dec-2025 13:50:51.414 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\jjnam\.jdks\openjdk-25\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Autofirma\Autofirma;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\jjnam\AppData\Local\Microsoft\WindowsApps;C:\Users\jjnam\AppData\Roaming\npm;C:\Users\jjnam\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jjnam\AppData\Local\gitkraken\bin;C:\Users\jjnam\AppData\Local\Android\Sdk\emulator;C:\Users\jjnam\.dotnet\tools;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;;.]
+17-Dec-2025 13:50:51.732 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+17-Dec-2025 13:50:51.750 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [567] milliseconds
+17-Dec-2025 13:50:51.794 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+17-Dec-2025 13:50:51.794 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.112]
+17-Dec-2025 13:50:51.805 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\jjnam\Desktop\PiononosFactory\conf\Catalina\localhost\ROOT.xml]
+17-Dec-2025 13:50:52.274 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+17-Dec-2025 13:50:52.331 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jjnam\Desktop\PiononosFactory\conf\Catalina\localhost\ROOT.xml] has finished in [520] ms
+17-Dec-2025 13:50:52.334 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:50:52.367 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [615] milliseconds
+17-Dec-2025 13:53:07.356 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:53:07.388 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+17-Dec-2025 13:53:07.397 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 13:53:07.411 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 14:01:34.783 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.112
+17-Dec-2025 14:01:34.786 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Nov 6 2025 07:46:18 UTC
+17-Dec-2025 14:01:34.786 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.112.0
+17-Dec-2025 14:01:34.786 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+17-Dec-2025 14:01:34.786 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+17-Dec-2025 14:01:34.786 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+17-Dec-2025 14:01:34.786 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\jjnam\.jdks\openjdk-25
+17-Dec-2025 14:01:34.786 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       25+36-3489
+17-Dec-2025 14:01:34.786 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+17-Dec-2025 14:01:34.787 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\jjnam\Desktop\PiononosFactory
+17-Dec-2025 14:01:34.787 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\jjnam\Documents\apache-tomcat-9.0.112
+17-Dec-2025 14:01:34.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Dec-2025 14:01:34.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+17-Dec-2025 14:01:34.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+17-Dec-2025 14:01:34.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-Dec-2025 14:01:34.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Dec-2025 14:01:34.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\jjnam\Documents\apache-tomcat-9.0.112
+17-Dec-2025 14:01:34.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\jjnam\Desktop\PiononosFactory
+17-Dec-2025 14:01:34.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\jjnam\Desktop\PiononosFactory\temp
+17-Dec-2025 14:01:34.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\jjnam\Desktop\PiononosFactory\conf\logging.properties
+17-Dec-2025 14:01:34.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Dec-2025 14:01:34.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.3\lib\idea_rt.jar=56408
+17-Dec-2025 14:01:34.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+17-Dec-2025 14:01:34.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+17-Dec-2025 14:01:34.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+17-Dec-2025 14:01:34.800 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\jjnam\.jdks\openjdk-25\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Autofirma\Autofirma;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\jjnam\AppData\Local\Microsoft\WindowsApps;C:\Users\jjnam\AppData\Roaming\npm;C:\Users\jjnam\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jjnam\AppData\Local\gitkraken\bin;C:\Users\jjnam\AppData\Local\Android\Sdk\emulator;C:\Users\jjnam\.dotnet\tools;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;;.]
+17-Dec-2025 14:01:35.098 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+17-Dec-2025 14:01:35.113 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [496] milliseconds
+17-Dec-2025 14:01:35.150 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+17-Dec-2025 14:01:35.150 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.112]
+17-Dec-2025 14:01:35.157 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\jjnam\Desktop\PiononosFactory\conf\Catalina\localhost\ROOT.xml]
+17-Dec-2025 14:01:35.538 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+17-Dec-2025 14:01:35.591 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jjnam\Desktop\PiononosFactory\conf\Catalina\localhost\ROOT.xml] has finished in [431] ms
+17-Dec-2025 14:01:35.594 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 14:01:35.623 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [509] milliseconds
+17-Dec-2025 14:05:13.163 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 14:05:13.193 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+17-Dec-2025 14:05:13.203 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 14:05:13.214 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 14:05:16.980 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.112
+17-Dec-2025 14:05:16.982 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Nov 6 2025 07:46:18 UTC
+17-Dec-2025 14:05:16.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.112.0
+17-Dec-2025 14:05:16.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+17-Dec-2025 14:05:16.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+17-Dec-2025 14:05:16.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+17-Dec-2025 14:05:16.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\jjnam\.jdks\openjdk-25
+17-Dec-2025 14:05:16.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       25+36-3489
+17-Dec-2025 14:05:16.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+17-Dec-2025 14:05:16.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\jjnam\Desktop\PiononosFactory
+17-Dec-2025 14:05:16.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\jjnam\Documents\apache-tomcat-9.0.112
+17-Dec-2025 14:05:16.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Dec-2025 14:05:16.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+17-Dec-2025 14:05:16.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+17-Dec-2025 14:05:16.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-Dec-2025 14:05:16.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Dec-2025 14:05:16.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\jjnam\Documents\apache-tomcat-9.0.112
+17-Dec-2025 14:05:16.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\jjnam\Desktop\PiononosFactory
+17-Dec-2025 14:05:16.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\jjnam\Desktop\PiononosFactory\temp
+17-Dec-2025 14:05:16.994 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\jjnam\Desktop\PiononosFactory\conf\logging.properties
+17-Dec-2025 14:05:16.994 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Dec-2025 14:05:16.994 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.3\lib\idea_rt.jar=49876
+17-Dec-2025 14:05:16.994 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+17-Dec-2025 14:05:16.994 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+17-Dec-2025 14:05:16.994 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+17-Dec-2025 14:05:17.002 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\jjnam\.jdks\openjdk-25\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Autofirma\Autofirma;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\jjnam\AppData\Local\Microsoft\WindowsApps;C:\Users\jjnam\AppData\Roaming\npm;C:\Users\jjnam\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jjnam\AppData\Local\gitkraken\bin;C:\Users\jjnam\AppData\Local\Android\Sdk\emulator;C:\Users\jjnam\.dotnet\tools;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\jjnam\AppData\Local\nvm;C:\nvm4w\nodejs;;.]
+17-Dec-2025 14:05:17.365 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+17-Dec-2025 14:05:17.380 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [609] milliseconds
+17-Dec-2025 14:05:17.424 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+17-Dec-2025 14:05:17.424 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.112]
+17-Dec-2025 14:05:17.434 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\jjnam\Desktop\PiononosFactory\conf\Catalina\localhost\ROOT.xml]
+17-Dec-2025 14:05:17.917 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+17-Dec-2025 14:05:17.969 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jjnam\Desktop\PiononosFactory\conf\Catalina\localhost\ROOT.xml] has finished in [529] ms
+17-Dec-2025 14:05:17.973 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 14:05:18.003 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [620] milliseconds
+17-Dec-2025 14:06:37.402 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 14:06:37.432 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+17-Dec-2025 14:06:37.443 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+17-Dec-2025 14:06:37.458 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
